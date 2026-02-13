@@ -1,0 +1,421 @@
+// ─────────────────────────────────────────
+// Component Styles
+// ─────────────────────────────────────────
+
+// ── Buttons ────────────────────────────────
+.btn-primary-custom {
+  background: $primary;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: $radius;
+  font-weight: $font-weight-semibold;
+  transition: all $transition-fast;
+
+  &:hover {
+    background: $primary-dark;
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: $shadow-md;
+  }
+}
+
+.btn-outline-custom {
+  background: transparent;
+  color: $primary;
+  border: 2px solid $primary;
+  padding: 0.6rem 1.5rem;
+  border-radius: $radius;
+  font-weight: $font-weight-semibold;
+  transition: all $transition-fast;
+
+  &:hover {
+    background: $primary;
+    color: #fff;
+    transform: translateY(-1px);
+  }
+}
+
+// ── Filter Sidebar ─────────────────────────
+.filter-sidebar {
+  background: #fff;
+  border-radius: $radius-lg;
+  padding: 1.5rem;
+  box-shadow: $shadow;
+  position: sticky;
+  top: 80px;
+
+  .filter-title {
+    font-weight: $font-weight-bold;
+    font-size: 1.15rem;
+    color: $secondary;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid $gray-100;
+  }
+
+  .filter-group {
+    margin-bottom: 1.5rem;
+
+    label {
+      font-weight: $font-weight-semibold;
+      font-size: 0.875rem;
+      color: $gray-700;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    select, input {
+      border: 2px solid $gray-200;
+      border-radius: $radius;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.9rem;
+      transition: border-color $transition-fast;
+      width: 100%;
+
+      &:focus {
+        border-color: $primary;
+        box-shadow: 0 0 0 3px rgba($primary, 0.1);
+        outline: none;
+      }
+    }
+  }
+
+  .price-inputs {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    span {
+      color: $gray-400;
+    }
+  }
+
+  .bedroom-btns {
+    display: flex;
+    gap: 0.25rem;
+
+    .bed-btn {
+      flex: 1;
+      padding: 0.4rem;
+      border: 2px solid $gray-200;
+      background: #fff;
+      border-radius: $radius-sm;
+      font-size: 0.85rem;
+      font-weight: $font-weight-medium;
+      color: $gray-600;
+      cursor: pointer;
+      text-align: center;
+      transition: all $transition-fast;
+
+      &.active, &:hover {
+        border-color: $primary;
+        background: $primary-light;
+        color: $primary;
+      }
+    }
+  }
+}
+
+// ── Gallery ────────────────────────────────
+.property-gallery {
+  border-radius: $radius-lg;
+  overflow: hidden;
+  margin-bottom: 2rem;
+
+  .gallery-main {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    object-fit: cover;
+    border-radius: $radius-lg $radius-lg 0 0;
+  }
+
+  .gallery-thumbs {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: $gray-100;
+    overflow-x: auto;
+
+    .thumb {
+      width: 100px;
+      height: 70px;
+      border-radius: $radius-sm;
+      object-fit: cover;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all $transition-fast;
+      flex-shrink: 0;
+
+      &:hover, &.active {
+        border-color: $primary;
+        opacity: 1;
+      }
+
+      &:not(.active) {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+// ── Detail Info Grid ───────────────────────
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+
+  .detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: $gray-50;
+    border-radius: $radius;
+
+    .detail-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: $radius;
+      background: $primary-light;
+      color: $primary;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .detail-info {
+      .detail-label {
+        font-size: 0.75rem;
+        color: $gray-500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .detail-value {
+        font-weight: $font-weight-semibold;
+        color: $gray-800;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+// ── Mortgage Calculator ────────────────────
+.mortgage-calculator {
+  background: #fff;
+  border-radius: $radius-lg;
+  padding: 2rem;
+  box-shadow: $shadow;
+
+  .calc-result {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, $primary 0%, $primary-dark 100%);
+    border-radius: $radius-lg;
+    color: #fff;
+    margin-top: 1.5rem;
+
+    .monthly-payment {
+      font-size: 2.8rem;
+      font-weight: $font-weight-bold;
+      margin-bottom: 0.25rem;
+    }
+
+    .payment-label {
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+  }
+
+  .calc-breakdown {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+
+    .breakdown-item {
+      text-align: center;
+      padding: 1rem;
+      background: $gray-50;
+      border-radius: $radius;
+
+      .breakdown-value {
+        font-weight: $font-weight-bold;
+        font-size: 1.1rem;
+        color: $secondary;
+      }
+
+      .breakdown-label {
+        font-size: 0.8rem;
+        color: $gray-500;
+        margin-top: 0.25rem;
+      }
+    }
+  }
+}
+
+// ── Contact Form ───────────────────────────
+.contact-form-card {
+  background: #fff;
+  border-radius: $radius-lg;
+  padding: 1.5rem;
+  box-shadow: $shadow;
+  border: 1px solid $gray-100;
+
+  .form-control {
+    border: 2px solid $gray-200;
+    border-radius: $radius;
+    padding: 0.6rem 0.85rem;
+    font-size: 0.9rem;
+
+    &:focus {
+      border-color: $primary;
+      box-shadow: 0 0 0 3px rgba($primary, 0.1);
+    }
+  }
+
+  textarea.form-control {
+    min-height: 100px;
+    resize: vertical;
+  }
+}
+
+// ── Multi-step Form ────────────────────────
+.step-indicator {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 2.5rem;
+
+  .step {
+    display: flex;
+    align-items: center;
+
+    .step-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: $gray-200;
+      color: $gray-500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: $font-weight-bold;
+      font-size: 0.9rem;
+      transition: all $transition-normal;
+    }
+
+    .step-label {
+      margin-left: 0.5rem;
+      font-size: 0.85rem;
+      color: $gray-500;
+      font-weight: $font-weight-medium;
+      margin-right: 1rem;
+    }
+
+    .step-line {
+      width: 40px;
+      height: 2px;
+      background: $gray-200;
+      margin: 0 0.5rem;
+    }
+
+    &.active, &.completed {
+      .step-circle {
+        background: $primary;
+        color: #fff;
+      }
+
+      .step-label {
+        color: $primary;
+      }
+    }
+
+    &.completed .step-line {
+      background: $primary;
+    }
+  }
+}
+
+// ── Dashboard Tabs ─────────────────────────
+.dashboard-tabs {
+  .nav-link {
+    font-weight: $font-weight-medium;
+    color: $gray-600;
+    padding: 0.75rem 1.5rem;
+    border-radius: $radius 0 0 0 !important;
+    border: none !important;
+    background: transparent;
+    border-bottom: 3px solid transparent !important;
+    transition: all $transition-fast;
+
+    &:hover {
+      color: $primary;
+    }
+
+    &.active {
+      color: $primary;
+      border-bottom-color: $primary !important;
+      background: transparent;
+    }
+  }
+}
+
+// ── Alert Messages ─────────────────────────
+.alert-success-custom {
+  background: rgba($success, 0.1);
+  border: 1px solid rgba($success, 0.2);
+  color: darken($success, 15%);
+  border-radius: $radius;
+  padding: 1rem 1.25rem;
+}
+
+// ── Feature Tags ───────────────────────────
+.feature-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  .feature-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.4rem 0.85rem;
+    background: $gray-50;
+    border: 1px solid $gray-200;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    color: $gray-700;
+
+    svg {
+      width: 14px;
+      color: $primary;
+    }
+  }
+}
+
+// ── Pagination ─────────────────────────────
+.pagination {
+  .page-link {
+    border: none;
+    color: $gray-600;
+    padding: 0.5rem 0.85rem;
+    border-radius: $radius !important;
+    margin: 0 0.15rem;
+    font-weight: $font-weight-medium;
+    transition: all $transition-fast;
+
+    &:hover {
+      background: $primary-light;
+      color: $primary;
+    }
+  }
+
+  .page-item.active .page-link {
+    background: $primary;
+    color: #fff;
+  }
+}
