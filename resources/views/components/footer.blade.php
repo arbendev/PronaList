@@ -4,7 +4,7 @@
         <div class="row g-4">
             {{-- About --}}
             <div class="col-lg-4 col-md-6">
-                <div class="footer-brand">Pro<span>Kos</span></div>
+                <div class="footer-brand">Prona<span>List</span></div>
                 <p class="footer-text">{{ __('general.footer_about_text') }}</p>
             </div>
 

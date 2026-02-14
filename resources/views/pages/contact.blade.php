@@ -30,7 +30,7 @@
                             </div>
                             <div>
                                 <h5>{{ __('general.contact_email') }}</h5>
-                                <p>info@prokos.al</p>
+                                <p>info@pronalist.com</p>
                             </div>
                         </div>
                         <div class="info-item">
