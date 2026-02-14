@@ -49,10 +49,12 @@
                             <a class="nav-link {{ request()->is('mortgage*') ? 'active' : '' }}"
                                href="{{ route('mortgage') }}">{{ __('general.nav_mortgage') }}</a>
                         </li> --}}
+                        {{-- 
                         <li class="nav-item">
                             <a class="nav-link {{ request()->is('about') ? 'active' : '' }}"
                                href="{{ route('about') }}">{{ __('general.nav_about') }}</a>
                         </li>
+                         --}}
                         <li class="nav-item">
                             <a class="nav-link {{ request()->is('contact') ? 'active' : '' }}"
                                href="{{ route('contact') }}">{{ __('general.nav_contact') }}</a>

@@ -14,8 +14,8 @@
                 <ul class="footer-links">
                     <li><a href="{{ route('properties.search', ['listing_type' => 'sale']) }}">{{ __('general.nav_buy') }}</a></li>
                     <li><a href="{{ route('properties.search', ['listing_type' => 'rent']) }}">{{ __('general.nav_rent') }}</a></li>
-                    {{-- <li><a href="{{ route('mortgage') }}">{{ __('general.nav_mortgage') }}</a></li> --}}
-                    <li><a href="{{ route('about') }}">{{ __('general.nav_about') }}</a></li>
+                    {{-- <li><a href="{{ route('mortgage') }}">{{ __('general.nav_mortgage') }}</a></li>
+                    <li><a href="{{ route('about') }}">{{ __('general.nav_about') }}</a></li>  --}}
                     <li><a href="{{ route('contact') }}">{{ __('general.nav_contact') }}</a></li>
                 </ul>
             </div>
