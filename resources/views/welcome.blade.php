@@ -64,6 +64,7 @@
     @endif
 
     {{-- Stats --}}
+    {{-- 
     <section class="stats-section">
         <div class="container">
             <div class="row g-4">
@@ -94,6 +95,7 @@
             </div>
         </div>
     </section>
+    --}}
 
     {{-- Recently Added --}}
     @if($recent->count())
