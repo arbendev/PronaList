@@ -21,7 +21,7 @@
         <nav class="navbar navbar-expand-lg navbar-prokos sticky-top">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="{{ url('/') }}/img/pronalist-logo.png" class="img-fluid" style="height: 48px;">
+                    <img src="{{ url('/') }}/img/pronalist-logo.png" class="img-fluid" style="height: 42px;">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

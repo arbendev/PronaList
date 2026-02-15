@@ -4,7 +4,7 @@
 
 @section('content')
     {{-- Hero Section --}}
-    <section class="hero-section text-center">
+    <section class="hero-section text-center" style="background-image: url('{{ asset('img/bg-kosova.jpg') }}'); background-size: cover; background-position: center;">
         <div class="container hero-content">
             <h1 class="hero-title">{{ __('general.hero_title') }}</h1>
             <p class="hero-subtitle">{{ __('general.hero_subtitle') }}</p>
