@@ -16,7 +16,7 @@ class NewLeadNotification extends Notification implements ShouldQueue
 
     public function via(object $notifiable): array
     {
-        return ['database'];
+        return ['database', 'mail'];
     }
 
     public function toArray(object $notifiable): array
@@ -31,5 +31,19 @@ class NewLeadNotification extends Notification implements ShouldQueue
             'message' => 'New lead for ' . ($this->lead->property?->translated_title ?? 'Property') . ' from ' . $this->lead->name,
             'link' => route('agent.leads'),
         ];
+    }
+
+    public function toMail(object $notifiable): MailMessage
+    {
+        return (new MailMessage)
+            ->subject('New Lead: ' . ($this->lead->property?->translated_title ?? 'General Inquiry'))
+            ->greeting('Hello ' . $notifiable->name . ',')
+            ->line('You have received a new lead for ' . ($this->lead->property?->translated_title ?? 'a property') . '.')
+            ->line('**Name:** ' . $this->lead->name)
+            ->line('**Email:** ' . $this->lead->email)
+            ->line('**Phone:** ' . ($this->lead->phone ?? 'N/A'))
+            ->line('**Message:**')
+            ->line($this->lead->message)
+            ->action('View Leads', route('agent.leads'));
     }
 }
