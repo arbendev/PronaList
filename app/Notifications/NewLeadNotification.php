@@ -26,7 +26,9 @@ class NewLeadNotification extends Notification
             'email' => $this->lead->email,
             'source' => $this->lead->source,
             'property_id' => $this->lead->property_id,
-            'message' => 'New lead from ' . $this->lead->name . ' (' . $this->lead->source_label . ')',
+            'property_title' => $this->lead->property?->translated_title,
+            'message' => 'New lead for ' . ($this->lead->property?->translated_title ?? 'Property') . ' from ' . $this->lead->name,
+            'link' => route('agent.leads'),
         ];
     }
 }

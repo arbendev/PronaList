@@ -53,10 +53,11 @@ class ContactAgent extends Component
             'user_agent' => request()->userAgent(),
         ]);
 
-        // Notify admin(s)
-        $admins = User::where('role', 'admin')->get();
-        foreach ($admins as $admin) {
-            $admin->notify(new NewLeadNotification($lead));
+        // Notify admin(s) & agents
+        $recipients = User::whereIn('role', ['admin', 'agent'])->get();
+        
+        foreach ($recipients as $recipient) {
+            $recipient->notify(new NewLeadNotification($lead));
         }
 
         $this->sent = true;
