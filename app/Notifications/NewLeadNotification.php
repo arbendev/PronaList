@@ -37,13 +37,9 @@ class NewLeadNotification extends Notification implements ShouldQueue
     {
         return (new MailMessage)
             ->subject('New Lead: ' . ($this->lead->property?->translated_title ?? 'General Inquiry'))
-            ->greeting('Hello ' . $notifiable->name . ',')
-            ->line('You have received a new lead for ' . ($this->lead->property?->translated_title ?? 'a property') . '.')
-            ->line('**Name:** ' . $this->lead->name)
-            ->line('**Email:** ' . $this->lead->email)
-            ->line('**Phone:** ' . ($this->lead->phone ?? 'N/A'))
-            ->line('**Message:**')
-            ->line($this->lead->message)
-            ->action('View Leads', route('agent.leads'));
+            ->view('emails.new-lead', [
+                'lead' => $this->lead,
+                'notifiable' => $notifiable
+            ]);
     }
 }
